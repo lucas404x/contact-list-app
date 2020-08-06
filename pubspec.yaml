@@ -24,6 +24,7 @@ dependencies:
   rxdart: ^0.24.1
   bloc_pattern: ^2.5.1
   moor:
+  moor_flutter:
   flutter:
     sdk: flutter
 
