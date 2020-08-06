@@ -24,6 +24,7 @@ dependencies:
   rxdart: ^0.24.1
   bloc_pattern: ^2.5.1
   moor:
+  moor_flutter:
   flutter:
     sdk: flutter
 
@@ -79,6 +80,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+dependency_overrides:
+  analyzer: '0.39.14'
 
 scripts:
   build: flutter pub run build_runner build
