@@ -1,1 +1,1 @@
-This app was made for training animations and tests on Flutter.
+This app was made to train animations and tests on Flutter.
