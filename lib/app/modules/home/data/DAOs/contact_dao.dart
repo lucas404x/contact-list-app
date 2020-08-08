@@ -1,6 +1,6 @@
-import 'package:contact_list/app/modules/home/models/contact_model.dart';
 import 'package:moor/moor.dart';
 
+import '../../models/contact_model.dart';
 import '../local_database.dart';
 import '../tables/contact_table.dart';
 
@@ -11,8 +11,8 @@ class ContactDao extends DatabaseAccessor<LocalDatabase>
     with _$ContactDaoMixin {
   ContactDao(LocalDatabase attachedDatabase) : super(attachedDatabase);
 
-  Stream<List<ContactTableData>> getAllContacts() =>
-      select(contactTable).watch();
+  Future<List<ContactTableData>> getAllContacts() =>
+      select(contactTable).get();
 
   Future<ContactTableData> getContact(ContactModel contactModel) =>
       (select(contactTable)..where((tbl) => tbl.id.equals(contactModel.id)))
