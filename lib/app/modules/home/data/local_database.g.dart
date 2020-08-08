@@ -340,6 +340,9 @@ abstract class _$LocalDatabase extends GeneratedDatabase {
   $ContactTableTable _contactTable;
   $ContactTableTable get contactTable =>
       _contactTable ??= $ContactTableTable(this);
+  ContactDao _contactDao;
+  ContactDao get contactDao =>
+      _contactDao ??= ContactDao(this as LocalDatabase);
   @override
   Iterable<TableInfo> get allTables => allSchemaEntities.whereType<TableInfo>();
   @override
