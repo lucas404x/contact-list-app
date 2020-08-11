@@ -13,9 +13,13 @@ class LocalDatabaseService implements ILocalStorage {
 
   @override
   Future<List<ContactModel>> getAllContactsOrderByAZ() async {
-    List contacts;
-    contacts = await _localDatabase.contactDao.getAllContacts();
-    contacts.map((contact) => ContactModel.fromMap(contact.toJson()));
+    List<ContactTableData> contactsTmp;
+    List<ContactModel> contacts;
+
+    contactsTmp = await _localDatabase.contactDao.getAllContacts();
+    contacts = List<ContactModel>.from(
+        contactsTmp.map((e) => ContactModel.fromMap(e.toJson())));
+
     contacts.sort((a, b) => a.name.compareTo(b.name));
 
     return contacts;
