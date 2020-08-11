@@ -38,7 +38,7 @@ class LocalDatabaseService implements ILocalStorage {
 
   @override
   Future<int> insertContact(contact) =>
-      _localDatabase.contactDao.deleteContact(contact);
+      _localDatabase.contactDao.insertContact(contact);
 
   @override
   Future<int> updateContact(contact) =>
